@@ -88,7 +88,7 @@
     "telemetry";
   gap: 2rem;
   padding-top: 3rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0;
 }
 
 .home-hero__content {
@@ -212,7 +212,7 @@
   .home-hero__layout {
     gap: 3rem;
     padding-top: 4rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
   }
 
   .home-hero__title {
@@ -286,7 +286,7 @@
     row-gap: 2rem;
     align-items: center;
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
   }
 
   .home-hero::after {

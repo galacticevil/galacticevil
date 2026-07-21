@@ -3,6 +3,16 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/ui', '@vueuse/nuxt'],
   css: ['~/assets/css/main.css'],
+  icon: {
+    clientBundle: {
+      icons: [
+        'lucide:orbit',
+        'lucide:code-xml',
+        'lucide:network',
+        'lucide:life-buoy'
+      ]
+    }
+  },
   app: {
     head: {
       htmlAttrs: { lang: 'en' },

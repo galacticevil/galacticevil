@@ -7,4 +7,5 @@ useSeoMeta({
 
 <template>
   <HomeHero />
+  <HomeCapabilities />
 </template>
