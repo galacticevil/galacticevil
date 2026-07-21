@@ -9,7 +9,8 @@ export default defineNuxtConfig({
         'lucide:orbit',
         'lucide:code-xml',
         'lucide:network',
-        'lucide:life-buoy'
+        'lucide:life-buoy',
+        'lucide:radio'
       ]
     }
   },
