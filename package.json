@@ -8,6 +8,10 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "test": "npm run test:frontend && npm run test:php",
+    "test:frontend": "node --test tests/contact-validation.test.ts",
+    "test:http": "node tests/contact-http.mjs",
+    "test:php": "docker compose run --rm --no-deps php php /var/www/contact-tests/contact_test.php",
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {

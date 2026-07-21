@@ -1,12 +1,26 @@
 services:
   php:
-    image: php:8.3-apache
+    build:
+      context: ./php
     ports:
       - "8081:80"
+    environment:
+      CONTACT_FROM: ${CONTACT_FROM:?Set CONTACT_FROM in .env}
+      CONTACT_RECIPIENT: ${CONTACT_RECIPIENT:?Set CONTACT_RECIPIENT in .env}
+      CONTACT_SOURCE_DIR: /var/www/contact-src
+      CONTACT_STATE_DIR: /var/lib/galactic-evil/contact
+      CONTACT_RATE_LIMIT_MAX: ${CONTACT_RATE_LIMIT_MAX:-5}
+      CONTACT_RATE_LIMIT_WINDOW: ${CONTACT_RATE_LIMIT_WINDOW:-900}
+      CONTACT_SUBMISSION_TTL: ${CONTACT_SUBMISSION_TTL:-86400}
     volumes:
-      - ./php/public:/var/www/html:ro
+      - ./php/public:/var/www/html/api:ro
+      - ./php/src:/var/www/contact-src:ro
+      - ./php/tests:/var/www/contact-tests:ro
+      - ./php/var:/var/lib/galactic-evil/contact
+    depends_on:
+      - mailpit
     healthcheck:
-      test: ["CMD", "php", "-r", "exit(@file_get_contents('http://localhost/health.php') === false ? 1 : 0);"]
+      test: ["CMD", "php", "-r", "exit(@file_get_contents('http://localhost/api/health.php') === false ? 1 : 0);"]
       interval: 10s
       timeout: 3s
       retries: 5

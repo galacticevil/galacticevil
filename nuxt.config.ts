@@ -10,7 +10,12 @@ export default defineNuxtConfig({
         'lucide:code-xml',
         'lucide:network',
         'lucide:life-buoy',
-        'lucide:radio'
+        'lucide:radio',
+        'lucide:send',
+        'lucide:check',
+        'lucide:rotate-ccw',
+        'lucide:triangle-alert',
+        'lucide:loader-circle'
       ]
     }
   },
@@ -27,6 +32,11 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
+    devProxy: {
+      '/api': {
+        target: 'http://127.0.0.1:8081'
+      }
+    },
     prerender: {
       crawlLinks: true,
       routes: [
