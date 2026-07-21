@@ -15,6 +15,7 @@ Start with:
 - [Architecture](docs/architecture.md)
 - [Content model](docs/content-model.md)
 - [Accessibility, motion, SEO, and performance](docs/quality-standards.md)
+- [Commits and versioning](docs/versioning.md)
 - [Scaffold plan](docs/scaffold-plan.md)
 - [Draft Codex repository instructions](docs/AGENTS.draft.md)
 
@@ -26,4 +27,3 @@ Start with:
 - VueUse for browser state and animation lifecycle
 - Static generation for SureSupport hosting
 - Minimal PHP backend, developed locally with Docker
-
