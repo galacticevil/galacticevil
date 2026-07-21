@@ -1,0 +1,18 @@
+services:
+  php:
+    image: php:8.3-apache
+    ports:
+      - "8081:80"
+    volumes:
+      - ./php/public:/var/www/html:ro
+    healthcheck:
+      test: ["CMD", "php", "-r", "exit(@file_get_contents('http://localhost/health.php') === false ? 1 : 0);"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "8025:8025"
+      - "1025:1025"

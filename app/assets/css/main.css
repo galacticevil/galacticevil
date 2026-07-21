@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+:root {
+  color-scheme: dark;
+  --ge-bg: #070b13;
+  --ge-bg-deep: #03060b;
+  --ge-surface: #0d1420;
+  --ge-surface-raised: #111b2a;
+  --ge-surface-active: #1a283a;
+  --ge-border: #344156;
+  --ge-border-muted: #202b3c;
+  --ge-text-heading: #e2cfab;
+  --ge-text-body: #c7b79a;
+  --ge-text-muted: #8d95a3;
+  --ge-accent-primary: #ff6a3d;
+  --ge-accent-info: #4fd1c5;
+  --ge-accent-success: #93d65a;
+  --ge-accent-secondary: #a06cd5;
+  --ge-accent-danger: #f04444;
+  --ge-font-display: "Tektur", "Arial Narrow", sans-serif;
+  --ge-font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --ge-font-telemetry: "IBM Plex Mono", "Cascadia Mono", monospace;
+  --ge-content-max: 90rem;
+  --ge-content-reading: 48rem;
+  --ge-radius-xs: 2px;
+  --ge-radius-sm: 4px;
+  --ge-radius-md: 8px;
+  --ge-focus-color: var(--ge-accent-info);
+  --ge-focus-width: 2px;
+  --ge-focus-offset: 3px;
+  --ge-control-height: 3rem;
+  --ge-panel-shadow:
+    inset 0 1px rgb(255 255 255 / 0.04),
+    inset 0 0 0 1px rgb(3 6 11 / 0.55),
+    0 16px 40px rgb(3 6 11 / 0.24);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--ge-bg);
+  color: var(--ge-text-body);
+  font-family: var(--ge-font-body);
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--ge-bg);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--ge-accent-primary);
+  color: var(--ge-bg-deep);
+}
+
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: var(--ge-focus-width) solid var(--ge-focus-color);
+  outline-offset: var(--ge-focus-offset);
+}
+
+.ge-font-display {
+  font-family: var(--ge-font-display);
+}
+
+.ge-font-telemetry,
+.ge-telemetry {
+  font-family: var(--ge-font-telemetry);
+}
+
+.ge-title {
+  max-width: 18ch;
+  margin: 0;
+  color: var(--ge-text-heading);
+  font-family: var(--ge-font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.ge-heading {
+  margin: 0;
+  color: var(--ge-text-heading);
+  font-family: var(--ge-font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.ge-copy {
+  max-width: var(--ge-content-reading);
+  margin: 0;
+  color: var(--ge-text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.ge-copy--lead {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.ge-telemetry {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+@media (min-width: 48rem) {
+  .ge-title {
+    font-size: 3.75rem;
+  }
+
+  .ge-heading {
+    font-size: 2rem;
+  }
+}
