@@ -84,7 +84,7 @@ function handleClick(event: MouseEvent) {
   border-radius: var(--ge-radius-xs);
   font-family: var(--ge-font-telemetry);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
   text-align: center;
   text-decoration: none;
